@@ -19,3 +19,6 @@
         * *DoD*
         * **13x** *re-formating*
         * *AES Cipher Bytes*
+
+    3. **Usage** :
+        * perl erazor.pl /dev/sdX
