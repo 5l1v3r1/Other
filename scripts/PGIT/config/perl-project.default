@@ -1,0 +1,7 @@
+author: {{NAME}}
+email: {{MAIL}}
+builder: ExtUtils::MakeMaker Module::Build Module::Install
+plugins: Module::Starter::PBP
+template_dir: {{HOME_DIR}}/.module-starter/PBP
+minperl: 5.18.0
+liscence: {{PERLPROJ_LICENSE}}

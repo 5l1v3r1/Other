@@ -1,0 +1,5 @@
+author:  {{NAME}}
+email:   {{EMAIL}}
+builder: ExtUtils::MakeMaker Module::Build
+plugins: Module::Starter::PBP
+template_dir: {{HOME_DIR}}/.module-starter/PBP

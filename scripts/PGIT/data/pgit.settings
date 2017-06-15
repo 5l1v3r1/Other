@@ -1,0 +1,8 @@
+NAME::Full Name::1::0
+EMAIL::Email Address (Public)::1::0
+REPOS_DIR::Local Path Of Github Repositories::1::0
+EDITOR::Default Editor::0::/usr/bin/nano
+PERLPROJ_LISCENCE::Perl Projects Default Liscence Type To Use::0::perl
+GIT_USERNAME::Github Username::1::0
+GIT_TOKEN::Github Account Token::1::0
+GIT_URL::Github URL::1::0
