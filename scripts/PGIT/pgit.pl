@@ -8,6 +8,9 @@ use Pod::Usage;
 
 no warnings 'experimental';
 
+# CONFIGURATION data
+my %CONFIG;
+
 # Default arguments values
 my %OPTIONS = (
     'verbose' => 0,
@@ -31,8 +34,8 @@ my %FILES = (
 );
 
 GetOptions(
-    'setup'         => \&setup,
-    'install'       => \&install,
+    'setup'         => \&Setup,
+    'install'       => \&Install,
     
     'name|n:s'      => \$REPOSITORY{'name'},
     'project|p:s'   => \$REPOSITORY{'project'},
@@ -82,6 +85,19 @@ sub Setup {
 
 sub Install {
     
+}
+
+sub ReadConfig {
+    my $field = 0;
+    my $value = 0;
+    
+    my @content = ReadFile($FILES{'pgit-config'});
+    
+    foreach my $line (@content) {
+        chomp $line;
+        ($field, $value) = split(/=/, $line);
+        $CONFIG{uc($field)} = $value;
+    }
 }
 
 sub PerlProject {
