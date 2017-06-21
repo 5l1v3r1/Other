@@ -1,14 +1,13 @@
 <?php
 	# Page Title
 	$siteTitle = "GreenBerry";
-	session_start();
-
+	
 	$refresh = '';
 
 	if((isset($_POST['refresh']))&&(is_numeric($_POST['refresh']))&&($_POST['refresh'] > 0)&&($_POST['refresh'] <= 50)) {
-	    $refresh = $_POST['refresh'];
+	    $_SESSION['refresh'] = $_POST['refresh'];
 	} else {
-	    $refresh = 15;
+	    $_SESSION['refresh'] = 2;
 	}
 ?>
 
@@ -28,22 +27,23 @@
 		<!-- Metadata -->
 		<meta charset="UTF-8">
 		<meta name="author" content="Michael Gottburg">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="RedHat Neuchâtel Office Plants Video Live Feed">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <meta name="description" content="RedHat Neuchâtel Office Plants Video Live Feed">
         
-        <meta http-equiv="refresh" content="<?php echo($refresh) ?>" >
+                <!-- AUto Refresh -->
+                <meta http-equiv="refresh" content="<?php echo($_SESSION['refresh']) ?>" >
 		
 		<title>
-            <?php echo($siteTitle) ?>
+                  <?php echo($siteTitle) ?>
 		</title>
 		
 		<style>
-			#map {
-		     height: 80%;
-		     width: 60%;
+	           #stream {
+		     height: 359px;
+		     width: 740px;
 		     margin: auto;
 		     border: 3px solid #73AD21;
 		     padding: 10px;
-			}
+		   }
 		</style>
     </head>
