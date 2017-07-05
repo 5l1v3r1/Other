@@ -1,0 +1,26 @@
+Dependencies :
+
+sudo apt-get install -y python-smbus i2c-tools
+
+Installing Kernel Support (Auto) :
+
+1. sudo raspi-config
+2. Advanced Options > A7 I2C > Enable
+
+Installing Kernel Support (Manually - Recommended) :
+
+1. sudo nano /etc/modules
+2. Add following lines at end of the file :
+   i2c-bcm2708 
+   i2c-dev
+
+3. sudo nano /boot/config.txt
+4. Add following lines at end of the file :
+   dtparam=i2c1=on
+   dtparam=i2c_arm=on
+
+5. Reboot : sudo reboot
+
+Testing :
+
+1. sudo i2cdetect -y 1
