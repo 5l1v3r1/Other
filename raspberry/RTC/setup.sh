@@ -4,10 +4,10 @@ echo "[+] Downloading Depencies ..."
 sudo apt-get update -y && sudo apt-get install -y python-smbus i2c-tools
 
 echo "[+] Installing Kernel Support ..."
-sudo echo -e "i2c-bcm2708" >> sudo /etc/modules
-sudo echo -e "i2c-dev" >> sudo /etc/modules
-sudo echo -e "dtparam=i2c1=on" >> sudo /boot/config.txt
-sudo echo -e "dtparam=i2c_arm=on" >> sudo /boot/config.txt
+sudo sh -c 'echo "i2c-bcm2708" >> /etc/modules'
+sudo sh -c 'echo "i2c-dev" >> /etc/modules'
+sudo sh -c 'echo "dtparam=i2c1=on" >> /boot/config.txt'
+sudo sh -c 'echo "dtparam=i2c_arm=on" >> /boot/config.txt'
 
 echo "[+] Done !"
 
