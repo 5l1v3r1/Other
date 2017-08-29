@@ -7,8 +7,8 @@ echo "[+] Installing Dependencies ..."
 sudo dnf install -y VirtualBox-\* vagrant-\* webkitgtk rhythmbox rhythmbox-\* empathy rubygem-nokogiri rubygem-factory_girl yelp yelp\* zenity
 
 echo "[+] Installing Package ..."
-sudo dpkg -i vagrant.deb
+dpkg -i vagrant.deb
 
 echo "[+] Cloning nbr2mp4 Repository ..."
-git clone https://github.com/prakashsurya/nbr2mp4-vagrant
-cd nbr2mp4-vagrant ; vagrant up
+git clone https://github.com/prakashsurya/nbr2mp4-vagrant ~/nbr2mp4-vagrant
+cd ~/nbr2mp4-vagrant ; vagrant up
